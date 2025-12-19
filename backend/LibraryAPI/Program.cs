@@ -3,8 +3,6 @@ using LibraryAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
-
 // Configure SQLite database with Entity Framework
 builder.Services.AddDbContext<LibraryDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -18,7 +16,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000", "http://localhost:5173") // React default ports
+            policy.WithOrigins("http://localhost:3000", "http://localhost:5173") 
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
