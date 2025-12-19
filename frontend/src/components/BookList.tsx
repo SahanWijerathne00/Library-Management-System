@@ -9,9 +9,7 @@ interface BookListProps {
   loading: boolean;
 }
 
-/**
- * Component to display a list of books
- */
+//display a list of books
 const BookList: React.FC<BookListProps> = ({
   books,
   onEdit,
@@ -34,7 +32,6 @@ const BookList: React.FC<BookListProps> = ({
       <div className="no-books">
         <FaBook size={50} />
         <h3>No books in the library</h3>
-        <p>Add your first book to get started!</p>
       </div>
     );
   }
@@ -65,7 +62,7 @@ const BookList: React.FC<BookListProps> = ({
 
           <div className="book-body">
             <p className="book-author">
-              <strong>Author:</strong> {book.author}
+              <strong>Author: </strong> {book.author}
             </p>
             {book.description && (
               <p className="book-description">{book.description}</p>

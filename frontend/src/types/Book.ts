@@ -8,7 +8,7 @@ export interface Book {
   updatedAt?: string;
 }
 
-// DTO for creating a new book (no id needed)
+// DTO for creating a new book
 export interface CreateBookDto {
   title: string;
   author: string;

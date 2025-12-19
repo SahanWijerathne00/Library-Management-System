@@ -8,9 +8,7 @@ interface BookFormProps {
   onCancel: () => void;
 }
 
-/**
- * Form component for creating or editing books
- */
+// Form component for creating or editing books
 const BookForm: React.FC<BookFormProps> = ({
   bookToEdit,
   onSubmit,
@@ -31,9 +29,7 @@ const BookForm: React.FC<BookFormProps> = ({
     }
   }, [bookToEdit]);
 
-  /**
-   * Validate form fields
-   */
+  // Validate form fields
   const validate = (): boolean => {
     const newErrors: { [key: string]: string } = {};
 
@@ -57,9 +53,7 @@ const BookForm: React.FC<BookFormProps> = ({
     return Object.keys(newErrors).length === 0;
   };
 
-  /**
-   * Handle form submission
-   */
+  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -87,9 +81,7 @@ const BookForm: React.FC<BookFormProps> = ({
     }
   };
 
-  /**
-   * Handle cancel button
-   */
+  // Handle cancel button
   const handleCancel = () => {
     setTitle("");
     setAuthor("");

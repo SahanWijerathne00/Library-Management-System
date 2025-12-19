@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Book, CreateBookDto, UpdateBookDto } from "../types/Book";
 
-// Base URL for the API - matches your backend port
+// Base URL for the API backend port
 const API_BASE_URL = "http://localhost:5238/api/books";
 
 // Create axios instance with default config
@@ -12,14 +12,10 @@ const api = axios.create({
   },
 });
 
-/**
- * Service for interacting with the Books API
- */
+// Service for interacting with the Books API
 export const bookService = {
-  /**
-   * Get all books from the API
-   * @returns Promise with array of books
-   */
+  // Get all books from the API
+
   getAllBooks: async (): Promise<Book[]> => {
     try {
       const response = await api.get<Book[]>("");
@@ -30,11 +26,7 @@ export const bookService = {
     }
   },
 
-  /**
-   * Get a single book by ID
-   * @param id - Book ID
-   * @returns Promise with book details
-   */
+  // Get a single book by ID
   getBookById: async (id: number): Promise<Book> => {
     try {
       const response = await api.get<Book>(`/${id}`);
@@ -45,11 +37,7 @@ export const bookService = {
     }
   },
 
-  /**
-   * Create a new book
-   * @param book - Book data to create
-   * @returns Promise with created book
-   */
+  // Create a new book
   createBook: async (book: CreateBookDto): Promise<Book> => {
     try {
       const response = await api.post<Book>("", book);
@@ -60,12 +48,7 @@ export const bookService = {
     }
   },
 
-  /**
-   * Update an existing book
-   * @param id - Book ID to update
-   * @param book - Updated book data
-   * @returns Promise with updated book
-   */
+  // Update an existing book
   updateBook: async (id: number, book: UpdateBookDto): Promise<Book> => {
     try {
       const response = await api.put<Book>(`/${id}`, book);
@@ -76,11 +59,7 @@ export const bookService = {
     }
   },
 
-  /**
-   * Delete a book
-   * @param id - Book ID to delete
-   * @returns Promise with success message
-   */
+  //Delete a book
   deleteBook: async (id: number): Promise<void> => {
     try {
       await api.delete(`/${id}`);

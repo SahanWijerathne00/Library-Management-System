@@ -6,9 +6,8 @@ import BookForm from "./components/BookForm";
 import { FaBook, FaPlus } from "react-icons/fa";
 import "./App.css";
 
-/**
- * Main App Component - Library Management System
- */
+// Main App Component - Library Management System
+
 function App() {
   // State management
   const [books, setBooks] = useState<Book[]>([]);
@@ -18,16 +17,14 @@ function App() {
   const [error, setError] = useState<string>("");
   const [successMessage, setSuccessMessage] = useState<string>("");
 
-  /**
-   * Fetch all books on component mount
-   */
+  // Fetch all books on component mount
+
   useEffect(() => {
     fetchBooks();
   }, []);
 
-  /**
-   * Fetch all books from API
-   */
+  // Fetch all books from API
+
   const fetchBooks = async () => {
     try {
       setLoading(true);
@@ -44,9 +41,7 @@ function App() {
     }
   };
 
-  /**
-   * Handle creating a new book
-   */
+  //Handle creating a new book
   const handleCreateBook = async (bookData: CreateBookDto) => {
     try {
       setError("");
@@ -60,9 +55,7 @@ function App() {
     }
   };
 
-  /**
-   * Handle updating an existing book
-   */
+  // Handle updating an existing book
   const handleUpdateBook = async (bookData: UpdateBookDto) => {
     if (!bookToEdit) return;
 
@@ -81,11 +74,9 @@ function App() {
     }
   };
 
-  /**
-   * Handle deleting a book
-   */
+  // Handle deleting a book
   const handleDeleteBook = async (id: number) => {
-    // Confirm before deleting
+    // Confirm message
     const book = books.find((b) => b.id === id);
     if (!book) return;
 
@@ -106,36 +97,28 @@ function App() {
     }
   };
 
-  /**
-   * Handle edit button click
-   */
+  // Handle edit button click
   const handleEditClick = (book: Book) => {
     setBookToEdit(book);
     setShowForm(true);
     setError("");
   };
 
-  /**
-   * Handle add new book button click
-   */
+  //Handle add new book button click
   const handleAddClick = () => {
     setBookToEdit(null);
     setShowForm(true);
     setError("");
   };
 
-  /**
-   * Handle form cancel
-   */
+  // Handle form cancel
   const handleFormCancel = () => {
     setShowForm(false);
     setBookToEdit(null);
     setError("");
   };
 
-  /**
-   * Handle form submit
-   */
+  // Handle form submit
   const handleFormSubmit = (bookData: CreateBookDto | UpdateBookDto) => {
     if (bookToEdit) {
       handleUpdateBook(bookData as UpdateBookDto);
@@ -144,9 +127,7 @@ function App() {
     }
   };
 
-  /**
-   * Show success message temporarily
-   */
+  // Show success message temporarily
   const showSuccess = (message: string) => {
     setSuccessMessage(message);
     setTimeout(() => setSuccessMessage(""), 3000);
@@ -171,7 +152,6 @@ function App() {
 
       {/* Main Content */}
       <main className="app-main">
-        {/* Success Message */}
         {successMessage && (
           <div className="alert alert-success">{successMessage}</div>
         )}
