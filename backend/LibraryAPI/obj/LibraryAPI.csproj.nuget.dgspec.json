@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\My projects\\Library Management System\\backend\\LibraryAPI\\LibraryAPI.csproj": {}
+    "E:\\My projects\\Library-Management-System\\backend\\LibraryAPI\\LibraryAPI.csproj": {}
   },
   "projects": {
-    "E:\\My projects\\Library Management System\\backend\\LibraryAPI\\LibraryAPI.csproj": {
+    "E:\\My projects\\Library-Management-System\\backend\\LibraryAPI\\LibraryAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\My projects\\Library Management System\\backend\\LibraryAPI\\LibraryAPI.csproj",
+        "projectUniqueName": "E:\\My projects\\Library-Management-System\\backend\\LibraryAPI\\LibraryAPI.csproj",
         "projectName": "LibraryAPI",
-        "projectPath": "E:\\My projects\\Library Management System\\backend\\LibraryAPI\\LibraryAPI.csproj",
+        "projectPath": "E:\\My projects\\Library-Management-System\\backend\\LibraryAPI\\LibraryAPI.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "E:\\My projects\\Library Management System\\backend\\LibraryAPI\\obj\\",
+        "outputPath": "E:\\My projects\\Library-Management-System\\backend\\LibraryAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
